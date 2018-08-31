@@ -1,0 +1,214 @@
+section#reviews_section {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    background: #9817c0;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #9817c0 25%, #302bed 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #9817c0 25%,#302bed 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #9817c0 25%,#302bed 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#9817c0', endColorstr='#302bed',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */
+    .reviews_box {
+        @include flexbox();
+        @include flex-wrap(wrap);
+        @include justify-content(space-around);
+        padding: 30px 0;
+        width: 100%;
+
+        .title {
+            width: 100%;
+            max-width: 375px;
+            align-self: center;
+            margin-bottom: 35px;
+            @media only screen and (min-width: 768px) {
+                width: 30%;
+                margin-bottom: inherit;
+            }
+
+            h2 {
+                text-align: center;
+                color: white;
+                font-size: 4.6em;
+                font-weight: 900;
+                line-height: 1.2em;
+            }
+        }
+
+        .reviews {
+            width: 288px;
+            height: 428px;
+            background: url(../../img/ramka_mobile.svg?2) no-repeat;
+            @media only screen and (min-width: 768px) {
+                background: url(../../img/ramka_tablet.svg) no-repeat;
+                width: 400px;
+                height: 320px;
+            }
+            @media only screen and (min-width: 992px) {
+                background: url(../../img/ramka_deskop.svg) no-repeat;
+                width: 522px;
+            }
+            @media only screen and (min-width: 1200px) {
+                background: url(../../img/ramka_deskop_lg.svg) no-repeat;
+                width: 600px;
+            }
+            max-width: 770px;
+            text-align: center;
+            position: relative;
+
+            .background {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    display: none;
+                    @media only screen and (min-width: 768px) {
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .next_slide,
+            .prev_slide {
+                position: absolute;
+                z-index: 10;
+                top: calc(37% - 10px);
+                cursor: pointer;
+                height: 30px;
+                width: 30px;
+                text-align: center;
+
+                img {
+                    position: absolute;
+                    top: calc(50% - 7px);
+                }
+                @media only screen and (min-width: 500px) {
+                    top: calc(40% - 10px);
+                }
+                @media only screen and (min-width: 768px) {
+                    top: calc(34% - 10px);
+                }
+
+            }
+
+            .prev_slide {
+                left: 10%;
+                transform: rotate(-180deg);
+                @media only screen and (min-width: 500px) {
+                    left: 20%;
+                }
+                @media only screen and (min-width: 768px) {
+                    left: 27%;
+                }
+            }
+
+            .next_slide {
+                right: 11%;
+                @media only screen and (min-width: 500px) {
+                    right: 20%;
+                }
+                @media only screen and (min-width: 768px) {
+                    right: 27%;
+                }
+            }
+
+            &::after,
+            &::before {
+                position: absolute;
+                z-index: 20;
+                color: #ac67f5;
+                content: " ";
+                height: 44px;
+                width: 70px;
+                background-image: url("../../img/cyt.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            &::before {
+                left: 0;
+                bottom: 14px;
+                @media only screen and (min-width: 768px) {
+                    bottom: 38px;
+                }
+                @media only screen and (min-width: 1200px) {
+                    bottom: 18px;
+                }
+
+            }
+
+            &::after {
+                right: 0;
+                top: 13px;
+                @media only screen and (min-width: 768px) {
+                    top: 20px;
+                }
+            }
+
+            .box {
+                .name {
+                    padding-top: 76px;
+                    @media only screen and (min-width: 768px) {
+                        padding-top: 30px;
+                    }
+                    font-size: 1.8em;
+                    font-weight: 700;
+                    color: white;
+                }
+
+                .img {
+                    margin: 20px 0;
+
+                    .cut {
+                        display: inline-block;
+                        height: 98px;
+                        width: 98px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        -webkit-box-shadow: 0 0 14px 0 rgba(0,0,0,0.4);
+                        -moz-box-shadow: 0 0 14px 0 rgba(0,0,0,0.4);
+                        box-shadow: 0 0 14px 0 rgba(0,0,0,0.4);
+
+                        img {
+                            display: inline-block;
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+
+                .contents {
+                    margin-bottom: 30px;
+
+                    .text {
+                        width: 74%;
+                        font-size: 1.8em;
+                        font-style: italic;
+                        color: white;
+                        display: inline-block;
+                        line-height: 1.3em;
+                        margin-bottom: 49px;
+                        -webkit-line-clamp: 4;
+                        max-height: 124px;
+                        overflow: hidden;
+                        @media only screen and (min-width: 1200px) {
+                            max-height: 94px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

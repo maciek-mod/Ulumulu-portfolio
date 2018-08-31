@@ -1,0 +1,121 @@
+section#competences{
+    position: relative;
+    top: 0;
+    opacity: 1;
+    -webkit-transition: all .5s ease-in-out;
+     -moz-transition: all .5s ease-in-out;
+     -o-transition: all .5s ease-in-out;
+     transition: all .5s ease-in-out;
+
+    .title{
+        text-align: center;
+        h2{
+            font-size: 3.5em;
+            font-weight: 900;
+            margin: 38px 0 27px 0;
+            color: black;
+            @media only screen and (min-width: 768px){
+                font-size: 4.6em;
+                margin: 90px 0 42px 0;
+            }
+        }
+        p:empty{
+            height: 0;
+            display: none;
+        }
+        p{
+            font-size: 1.8em;
+            font-weight: 400;
+            padding: 0 2%;
+            color: #5b5b5b;
+            margin-bottom: 50px;
+            line-height: 1.45em;
+            @media only screen and (min-width: 768px){
+                padding: 0 72px;
+                margin-bottom: 86px;
+            }
+        }
+    }
+    .project_implementation{
+        p{
+            &:first-child{
+                font-size: 2.4em;
+                font-weight: 700;
+                color: #9817c0;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+        }
+
+
+        .types_of_projects{
+            @include flexbox();
+            @include flex-wrap(wrap);
+            @include justify-content(space-around);
+            .project_flex{
+                width: 440px;
+                @include flexbox();
+                @include flex-wrap(wrap);
+                @include align-items(flex-start);
+                @media only screen and (max-width: 768px){
+                    @include justify-content(space-around);
+                }
+                img{
+                    max-width: 136px;
+                    max-height: 200px;
+                    width: 33%;
+                }
+                .types{
+                    margin: 10px 0 0 0;
+                    width: 100%;
+                    @media only screen and (min-width: 460px){
+                        width: auto;
+                        padding: 10px 0 0 10px;
+                    }
+
+                    @media only screen and (min-width: 768px){
+                        padding: 0 0 0 23px;
+                        width: 67%;
+                    }
+                    p{
+                        &:first-child{
+                            font-size: 2.4em;
+                            margin-bottom: 30px;
+                            color: black;
+                            text-align: left;
+                        }
+                    }
+                    ul{
+                        margin-bottom: 50px;
+                        li{
+                            font-size: 1.8em;
+                            line-height: 1.9em;
+                            position: relative;
+                            margin-left: 23px;
+                            &::before{
+                                content: "\2022";
+                                color: #9817c0;
+                                position: absolute;
+                                left: -23px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .message{
+        text-align: center;
+        padding: 0 7% 40px 7%;
+        font-size: 1.8em;
+        line-height: 1.4em;
+        span{
+            color: #2bc8ff;
+        }
+        @media only screen and (min-width: 768px){
+            margin: 0 0 0 39px;
+            padding: 0 0 90px 0;
+
+        }
+    }
+}

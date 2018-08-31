@@ -1,0 +1,35 @@
+#page_404{
+    width: 100vw;
+    height: 100vh;
+    background: #9817c0;
+    /* Old browsers */
+    background: -moz-linear-gradient(145deg, #9817c0 25%, #302bed 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(145deg, #9817c0 25%,#302bed 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(305deg, #9817c0 25%,#302bed 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#9817c0', endColorstr='#302bed',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */
+    .flex_404{
+        height: 100vh;
+        @include flexbox();
+        @include flex-wrap(wrap);
+        @include justify-content(center);
+        @include align-items(center);
+        .content_404{
+            text-align: center;
+            p ,a{
+                font-size: 3em;
+                color: white;
+            }
+            a{
+                // margin-top: 30px;
+                color: #2bc8ff;
+            }
+            p{
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
